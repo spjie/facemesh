@@ -4,11 +4,11 @@ let predictions = [];
 
 let modelIsReady = false;
 let img;
-const offset = 15;
+const offset = 13;
 
-// function preload() {
-//   img = loadImage('/static/eyes.png');
-// }
+function preload() {
+  img = loadImage('/static/eyes.png');
+}
 
 function setup() {
   createCanvas(640, 480);
@@ -72,9 +72,12 @@ function printAnnotations(){
     circle(rightEyeUpperX+offset, (rightEyeUpperY + rightEyeLowerY)/2, 40); //200/rightEyeUpperZ?
     circle(leftEyeUpperX-offset, (leftEyeUpperY + leftEyeLowerY)/2, 40);
 
-    console.log(rightEyeUpper);
+    console.log(rightEyeUpperZ);
 
-    // image(img,rightEyeUpperX,(rightEyeUpperY + rightEyeLowerY)/2);
+    imageMode(CENTER);
+    image(img,rightEyeUpperX + offset,(rightEyeUpperY + rightEyeLowerY)/2, 50, 50);
+    image(img,leftEyeUpperX - offset,(leftEyeUpperY + leftEyeLowerY)/2, 50, 50);
+
   }
 }
 
